@@ -1,4 +1,4 @@
-abstract class Kaffe{
+export abstract class Kaffe{
     Rabat : number;
 
     abstract Pris() : number;
