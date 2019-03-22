@@ -1,6 +1,7 @@
 import { Cortado } from "./Cortado";
 import { Latte } from "./Latte";
 import { SortKaffe } from "./SortKaffe";
+import { Kaffe } from "./Kaffe";
 
 //interface Person {
 //   firstName: string;
@@ -42,3 +43,19 @@ let sortKaffeUdenRabat = new SortKaffe(0);
 console.log("sortKaffe pris", sortKaffeUdenRabat.Pris());
 console.log("sortKaffe rabat", sortKaffeUdenRabat.Rabat);
 console.log("sortKaffe styrke", sortKaffeUdenRabat.Styrke());
+
+//opgave 7
+function printAllKaffe(): void{
+    //En liste af alle kaffe typer.
+    let AllKaffe: Kaffe[] = [];
+    AllKaffe.push(new Cortado(0));
+    AllKaffe.push(new Latte(0));
+    AllKaffe.push(new SortKaffe(4));
+    // iterate through the array, AllKaffe, and print each kaffe type.
+    for(let i=0; i<AllKaffe.length; i++){
+        console.log(AllKaffe[i].KaffeDrik());
+    }
+     
+}
+
+printAllKaffe();
