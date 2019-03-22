@@ -1,4 +1,5 @@
 import { Cortado } from "./Cortado";
+import { Latte } from "./Latte";
 
 //interface Person {
 //   firstName: string;
@@ -13,7 +14,14 @@ import { Cortado } from "./Cortado";
 //let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
 //element.innerHTML = greeter(user);
 
-let KopCortado = new Cortado(50);
-console.log("prisen:", KopCortado.Pris());
-console.log("rabatten:", KopCortado.Rabat);
-console.log("styrken:", KopCortado.Styrke())
+//opgave 3
+let kopCortado = new Cortado(50);
+console.log("Cortado pris:", kopCortado.Pris());
+console.log("Cortado rabat:", kopCortado.Rabat);
+console.log("Cortado styrke:", kopCortado.Styrke())
+
+//opgave 4
+let kopLatte = new Latte(5);
+console.log("Latte pris", kopLatte.Pris());
+console.log("Latte rabat", kopLatte.Rabat);
+console.log("Latte styrke", kopLatte.Styrke());
