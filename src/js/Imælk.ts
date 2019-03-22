@@ -1,0 +1,3 @@
+interface Imælk {
+    MIMælk() : number;
+}
