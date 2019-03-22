@@ -2,6 +2,9 @@ import { Imælk } from "./Imælk";
 import { Kaffe } from "./Kaffe";
 
 export class Latte extends Kaffe implements Imælk{
+    KaffeDrik(): string {
+        return "Latte";
+    }
     constructor(rabat: number){
         super(rabat);
     }

@@ -1,6 +1,9 @@
 import { Kaffe } from "./Kaffe";
 
 export class SortKaffe extends Kaffe{
+    KaffeDrik(): string {
+        return "SortKaffe";
+    }
     constructor(rabat: number){
         super(rabat);
     }

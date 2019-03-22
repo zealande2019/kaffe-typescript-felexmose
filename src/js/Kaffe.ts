@@ -7,6 +7,8 @@ export abstract class Kaffe{
         return "Mild";
     }
 
+    abstract KaffeDrik(): string;
+
     constructor(rabat : number){
         this.Rabat = rabat;
     }
