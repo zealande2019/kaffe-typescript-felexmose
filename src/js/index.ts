@@ -44,18 +44,49 @@ console.log("sortKaffe pris", sortKaffeUdenRabat.Pris());
 console.log("sortKaffe rabat", sortKaffeUdenRabat.Rabat);
 console.log("sortKaffe styrke", sortKaffeUdenRabat.Styrke());
 
+//En liste af alle kaffe typer.
+let kaffeTyper: Kaffe[] = [];
+kaffeTyper.push(new Cortado(0));
+kaffeTyper.push(new Latte(0));
+kaffeTyper.push(new SortKaffe(4));
+
 //opgave 7
 function printAllKaffe(): void{
-    //En liste af alle kaffe typer.
-    let AllKaffe: Kaffe[] = [];
-    AllKaffe.push(new Cortado(0));
-    AllKaffe.push(new Latte(0));
-    AllKaffe.push(new SortKaffe(4));
-    // iterate through the array, AllKaffe, and print each kaffe type.
-    for(let i=0; i<AllKaffe.length; i++){
-        console.log(AllKaffe[i].KaffeDrik());
+        // iterate through the array, AllKaffe, and print each kaffe type.
+    for(let i=0; i<kaffeTyper.length; i++){
+        console.log(kaffeTyper[i].KaffeDrik());
     }
      
 }
 
 printAllKaffe();
+
+//opgave 8
+function createMenu(): void{
+    let tableElement: HTMLTableCaptionElement = <HTMLTableCaptionElement>document.getElementById("table1");
+    for(let i=0; i<kaffeTyper.length; i++){
+        let trElement: HTMLTableRowElement = new HTMLTableRowElement();
+        let td1: HTMLTableDataCellElement = new HTMLTableDataCellElement();
+        let td2: HTMLTableDataCellElement = new HTMLTableDataCellElement();
+        let td3: HTMLTableDataCellElement = new HTMLTableDataCellElement();
+        let td4: HTMLTableDataCellElement = new HTMLTableDataCellElement();
+        let bestilBtn: HTMLButtonElement = new HTMLButtonElement();
+
+        td1.textContent = kaffeTyper[i].KaffeDrik();
+        td2.textContent = kaffeTyper[i].Styrke();
+        td3.textContent = String(kaffeTyper[i].Pris());
+        //td4.textContent = String(kaffeTyper[i].Pris());
+        
+
+        trElement.append(td1);
+        trElement.append(td2);
+        trElement.append(td3);
+        //
+        trElement.append(td4);
+
+        tableElement.append(trElement);
+    }
+}
+
+createMenu();
+
