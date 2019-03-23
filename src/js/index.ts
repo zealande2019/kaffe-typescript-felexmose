@@ -63,25 +63,28 @@ printAllKaffe();
 
 //opgave 8
 function createMenu(): void{
+    //get table element.
     let tableElement: HTMLTableCaptionElement = <HTMLTableCaptionElement>document.getElementById("table1");
+    // go through each kaffe object in the list and add it to the table.
     for(let i=0; i<kaffeTyper.length; i++){
-        let trElement: HTMLTableRowElement = new HTMLTableRowElement();
-        let td1: HTMLTableDataCellElement = new HTMLTableDataCellElement();
-        let td2: HTMLTableDataCellElement = new HTMLTableDataCellElement();
-        let td3: HTMLTableDataCellElement = new HTMLTableDataCellElement();
-        let td4: HTMLTableDataCellElement = new HTMLTableDataCellElement();
-        let bestilBtn: HTMLButtonElement = new HTMLButtonElement();
 
-        td1.textContent = kaffeTyper[i].KaffeDrik();
-        td2.textContent = kaffeTyper[i].Styrke();
-        td3.textContent = String(kaffeTyper[i].Pris());
-        //td4.textContent = String(kaffeTyper[i].Pris());
+        let trElement: HTMLElement = document.createElement("tr")
         
+        let td1: HTMLElement = document.createElement("td");
+        td1.innerText = kaffeTyper[i].KaffeDrik();
+        let td2: HTMLElement = document.createElement("td");
+        td2.innerText = kaffeTyper[i].Styrke();
+        let td3: HTMLElement = document.createElement("td");
+        td3.innerText = String(kaffeTyper[i].Pris());
+        let td4: HTMLElement = document.createElement("td");
+        
+        let bestilBtn: HTMLElement = document.createElement("button");
+        bestilBtn.textContent = "Bestil";
+        td4.appendChild(bestilBtn);
 
         trElement.append(td1);
         trElement.append(td2);
         trElement.append(td3);
-        //
         trElement.append(td4);
 
         tableElement.append(trElement);
