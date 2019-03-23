@@ -3,19 +3,6 @@ import { Latte } from "./Latte";
 import { SortKaffe } from "./SortKaffe";
 import { Kaffe } from "./Kaffe";
 
-//interface Person {
-//   firstName: string;
-//    lastName: string;
-//}
-
-//function greeter(person: Person): string {
-//    return "Hello, " + person.firstName + " " + person.lastName;
-//}
-//let user: Person = { firstName: "John", lastName: "Doe" };
-
-//let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-//element.innerHTML = greeter(user);
-
 //opgave 3
 console.log("Cortado:")
 let kopCortado = new Cortado(0);
@@ -65,6 +52,7 @@ printAllKaffe();
 function createMenu(): void{
     //get table element.
     let tableElement: HTMLTableCaptionElement = <HTMLTableCaptionElement>document.getElementById("table1");
+
     // go through each kaffe object in the list and add it to the table.
     for(let i=0; i<kaffeTyper.length; i++){
 
@@ -87,6 +75,11 @@ function createMenu(): void{
                 let liBestiltElement: HTMLElement = document.createElement("li");
                 liBestiltElement.textContent = kaffeTyper[i].KaffeDrik();
                 bestillingsListen.append(liBestiltElement);
+                //remove the order from the list, when clicked.
+                liBestiltElement.addEventListener ("click",
+                () =>{
+                    
+                });
 
 
         });
@@ -105,7 +98,7 @@ createMenu();
 let bestillingsListeDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("bestillingsListeDiv");
 let bestillingsListen: HTMLElement = document.createElement("ol");
 let bestListOverSkrift: HTMLElement = document.createElement("h2");
-bestListOverSkrift.textContent = "Din bestillinger:"
+bestListOverSkrift.textContent = "Bestillingerne:"
 bestillingsListeDiv.append(bestListOverSkrift);
 bestillingsListeDiv.append(bestillingsListen);
 
