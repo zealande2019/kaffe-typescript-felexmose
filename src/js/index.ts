@@ -10,7 +10,7 @@ console.log("Cortado pris:", kopCortado.Pris());
 console.log("Cortado rabat:", kopCortado.Rabat);
 console.log("Cortado styrke:", kopCortado.Styrke())
 
-//opgave 4
+//opgave 4.
 console.log("Latte:")
 let kopLatte = new Latte(0);
 console.log("Latte pris", kopLatte.Pris());
@@ -78,17 +78,15 @@ function createMenu(): void{
                 //remove the order from the list, when clicked.
                 liBestiltElement.addEventListener ("click",
                 () =>{
-                    
+                    liBestiltElement.remove();
                 });
-
-
         });
 
         trElement.append(td1);
         trElement.append(td2);
         trElement.append(td3);
         trElement.append(td4);
-
+        
         tableElement.append(trElement);
     }
 }
@@ -97,6 +95,8 @@ createMenu();
 // creating a new div for displaying the list of orders.
 let bestillingsListeDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("bestillingsListeDiv");
 let bestillingsListen: HTMLElement = document.createElement("ol");
+
+
 let bestListOverSkrift: HTMLElement = document.createElement("h2");
 bestListOverSkrift.textContent = "Bestillingerne:"
 bestillingsListeDiv.append(bestListOverSkrift);
